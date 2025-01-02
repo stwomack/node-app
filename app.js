@@ -1,10 +1,19 @@
 const express = require('express');
-const app = express();
+const { getLatestDocuments } = require('./mongodb');
 
-app.get('/', (req, res) => {
-  res.send('Hello from Kpack, legacy edition!');
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get('/', async (req, res) => {
+  try {
+    const documents = await getLatestDocuments();
+    res.json({ message: "Last 10 Orders:", data: documents });
+  } catch (error) {
+    console.error("Error fetching documents:", error);
+    res.status(500).json({ error: 'Failed to fetch documents from MongoDB' });
+  }
 });
 
-app.listen(3000, () => {
-  console.log('Server listening on port 3000');
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });

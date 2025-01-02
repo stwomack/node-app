@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello from Kpack!');
+  res.send('Hello from Kpack, legacy edition!');
 });
 
 app.listen(3000, () => {

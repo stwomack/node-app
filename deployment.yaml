@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: node-app
-          image: stwomack/node-app:b1
+          image: stwomack/node-app-legacy
           ports:
             - containerPort: 3000
           envFrom:

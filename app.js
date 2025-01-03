@@ -1,5 +1,5 @@
 const express = require('express');
-//const { getLatestDocuments } = require('./mongodb');
+const { getLatestDocuments } = require('./mongodb.js');
 
 const app = express();
 const port = process.env.PORT || 3000;

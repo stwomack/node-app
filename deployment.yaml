@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node-app
+  name: node-app-legacy
 spec:
   replicas: 2
   selector:
